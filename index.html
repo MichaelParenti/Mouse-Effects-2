@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Effects</title>
+    <style>
+        body{
+            background: black;
+        }
+        #loading{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            border-top: 3px solid blue;
+            top: 300px;
+            left: 300px;   
+            display: flex;
+            align-items: center;
+            justify-content: center;   
+            animation: 1s infinite identifier linear;
+            transform: translate(-150px, -150px);
+        }
+        #loader{
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            border-left: 3px solid red;
+            margin: 0px;
+            display: flex;
+            align-items: center;
+            justify-content: center;   
+            animation: 8s infinite identifier2 linear;
+        }
+        #load{
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            border-bottom: 3px solid white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0px;
+            animation: 2s infinite identifier linear;
+        }
+        #l{
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            border-right: 3px solid blue;
+            margin: 0px;
+            animation: 2s infinite identifier2 linear;
+        }
+        @keyframes identifier {
+            0%{transform:rotate(0deg);}
+            25%{transform:rotate(90deg);}
+            50%{transform:rotate(180deg);}
+            75%{transform:rotate(270deg);}
+            100%{transform:rotate(360deg);}
+        }
+        @keyframes identifier2 {
+            0%{transform:rotate(0deg);}
+            25%{transform:rotate(-90deg);}
+            50%{transform:rotate(-180deg);}
+            75%{transform:rotate(-270deg);}
+            100%{transform:rotate(-360deg);}
+        }
+        
+    </style>
+</head>
+<body>
+        <div id="loading">
+            <div id="loader">
+                <div id="load">
+                    <div id="l"></div>
+                </div>
+            </div>
+        </div>
+        
+        <script>
+            document.addEventListener("mousemove",function(e) {
+                document.getElementById("loading").style.left = e.pageX - 50 + "px";     // Get the horizontal coordinate
+                document.getElementById("loading").style.top = e.pageY - 50 + "px";     // Get the horizontal coordinate
+            });
+        </script>
+</body>
+</html>
